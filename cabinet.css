@@ -1,0 +1,149 @@
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.header {
+    background-color: #ffffff;
+    width: 100%;
+    position: static;
+    z-index: 100;
+}
+
+.header__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo__img {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+.logo__text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+}
+
+.nav__list {
+    display: flex;
+    list-style: none;
+}
+
+.nav__item {
+    margin-left: 30px;
+    position: relative;
+}
+
+.nav__link {
+    font-family: 'Inknut Antiqua', sans-serif;
+    text-decoration: none;
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.05em;
+    transition: all 0.3s ease;
+    padding: 13px 15px;
+    display: inline-block;
+    position: relative;
+}
+
+.nav__link::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    right: 15px;
+    height: 1.4px;
+    background-color: #000;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+    transform-origin: center;
+}
+
+.nav__link:hover::after {
+    transform: scaleX(1);
+}
+
+body {
+    color: #000000;
+    line-height: 1.6;
+    background-color: #ffffff;
+}
+
+.container {
+    width: 100%;
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.cabinet {
+    padding: 40px 60px;
+    background-color: #FADFD6;
+    border-radius: 10px;
+}
+
+h1,
+h2 {
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+.profile,
+.records {
+    margin-bottom: 40px;
+}
+
+.record {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    background-color: #f9f9f9;
+}
+
+.button-logout {
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    text-decoration: 0;
+    padding: 10px;
+}
+
+.button-admin {
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+    text-decoration: 0;
+    padding: 10px;
+}
+
+.button-logout:hover,
+.button-admin:hover {
+    opacity: 0.8;
+}
+
+.empty-message {
+    color: #666;
+    font-style: italic;
+}
+
+.button-group {
+    gap: 20px;
+    display: flex;
+    justify-content: flex-end;
+}

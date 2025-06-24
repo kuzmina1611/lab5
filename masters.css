@@ -1,0 +1,884 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+    font-family: 'Inknut Antiqua', 'Josefin Sans', sans-serif; 
+}
+
+body {
+    color: #000000; 
+    line-height: 1.6; 
+    background-color: #ffffff; 
+}
+
+
+.container {
+    width: 100%;
+    max-width: 1300px; 
+    margin: 0 auto; 
+    padding: 0 15px; 
+}
+
+
+.header {
+    background-color: #ffffff; 
+    width: 100%;
+    position: static; 
+    z-index: 100; 
+}
+
+
+.header__inner {
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center;
+    padding: 15px 0; 
+}
+
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+
+.logo__img {
+    width: 45px;
+    height: 45px;
+    margin-right: 10px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+}
+
+
+.logo__text {
+    font-size: 18px;
+    font-weight: 500;
+    color: #000000;
+}
+
+
+.nav__list {
+    display: flex;
+    list-style: none; 
+}
+
+
+.nav__item {
+    margin-left: 30px; 
+    position: relative;
+}
+
+
+.nav__link {
+    font-family: 'Inknut Antiqua', sans-serif;
+    text-decoration: none; 
+    color: #000000;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.05em; 
+    transition: all 0.3s ease; 
+    padding: 13px 15px;
+    display: inline-block;
+    position: relative;
+}
+
+
+.nav__link::after {
+    content: "";
+    position: absolute;
+    bottom: 10px;
+    left: 15px;
+    right: 15px;
+    height: 1.4px;
+    background-color: #000;
+    transform: scaleX(0); 
+    transition: transform 0.3s ease; 
+    transform-origin: center;
+}
+
+
+.nav__link:hover::after {
+    transform: scaleX(1);
+}
+
+/* Стили для раздела мастеров */
+.masters-title {
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-bottom: -30px;
+    color: #000000;
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Сетка карточек мастеров */
+.masters-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Адаптивная сетка */
+    gap: 30px; /* Расстояние между карточками */
+    padding: 0 18px; /* Отступы по бокам */
+}
+
+/* Прозрачная карточка мастера */
+.master-card-transparent {
+    position: relative;
+    width: 100%;
+    margin-bottom: -55px; /* Отрицательный отступ */
+    transition: transform 0.3s ease; /* Плавное перемещение */
+    margin-top: 80px;
+}
+
+/* Эффект при наведении на карточку */
+.master-card-transparent:hover {
+    transform: translateY(-5px); /* Сдвиг вверх */
+}
+
+/* Обертка для изображения мастера */
+.master-image-wrapper {
+    position: relative;
+    width: 93%;
+    height: 370px;
+    border-radius: 2px; /* Скругление углов */
+}
+
+/* Информация о мастере (прозрачная) */
+.master-info-transparent {
+    position: absolute;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.311); /* Полупрозрачный фон */
+    backdrop-filter: blur(3px); /* Размытие фона */
+    border-radius: 0 0 2px 2px; /* Скругление нижних углов */
+    margin-top: -77px;
+    height: 70px;
+}
+
+/* Имя мастера */
+.master-name-transparent {
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 17px;
+    font-weight: 500;
+    color: #ffffff;
+    margin-bottom: 5px;
+    margin-top: -11px;
+}
+
+/* Специализация мастера */
+.master-specialty-transparent {
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 13px;
+    color: #ffffff;
+    opacity: 0.9; /* Непрозрачность */
+}
+
+/* Обертка для кнопки */
+.master-button-wrapper {
+    margin-top: -13px;
+    text-align: center; /* Выравнивание по центру */
+}
+
+/* Кнопка "Подробнее" */
+.master-more-transparent {
+    display: inline-block;
+    padding: 7px 31px;
+    background-color: transparent; /* Прозрачный фон */
+    color: #000000;
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 16px;
+    text-decoration: none;
+    border: 1px solid #000; /* Граница */
+    border-radius: 0px; /* Прямые углы */
+    transition: all 0.3s ease; /* Плавные переходы */
+}
+
+/* Эффект при наведении на кнопку */
+.master-more-transparent:hover {
+    background-color: #000; /* Черный фон */
+    color: #fff; /* Белый текст */
+}
+
+/* Подвал сайта */
+.footer {
+    background-color: #1E1E1E; /* Темный фон */
+    padding: 15px 0 -2px;
+    color: #ffffff;
+    margin-top: 200px; /* Отступ сверху */
+    margin-bottom: -50px;
+    width: 100%;
+    position: relative;
+}
+
+/* Содержимое подвала */
+.footer__content {
+    display: flex;
+    justify-content: space-between; /* Распределение пространства */
+    align-items: flex-start; /* Выравнивание по верху */
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Левая часть подвала */
+.footer__left {
+    display: flex;
+    flex-direction: column; /* Вертикальное расположение */
+}
+
+/* Заголовок контактов */
+.contacts-title {
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 35px;
+    font-weight: 500;
+    margin-top: 32px;
+    margin-bottom: 30px;
+    letter-spacing: 0.05em; /* Межбуквенный интервал */
+    margin-left: -20px; /* Сдвиг влево */
+}
+
+/* Ссылки контактов и заголовок расписания */
+.contact-link, .schedule-title {
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 20px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    color: #ACAAA7; /* Серый цвет */
+    margin-left: -20px;
+}
+
+/* Телефон */
+.contact-phone {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 5px;
+    margin-left: -20px;
+}
+
+/* Часы работы */
+.contact-hours {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 15px;
+    font-weight: 300;
+    margin-bottom: 40px;
+    margin-left: -20px;
+}
+
+/* Блок расписания */
+.schedule-block {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    left: 500px; /* Сдвиг вправо */
+    top: -155px; /* Сдвиг вверх */
+    margin-right: -100px;
+}
+
+/* Рабочие дни */
+.work-days, .sunday-hours {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 23px;
+    font-weight: 300;
+    margin-bottom: 5px;
+}
+
+/* Воскресные часы */
+.sunday-hours {
+    line-height: 0.6; /* Межстрочный интервал */
+}
+
+/* Правая часть подвала */
+.footer__right {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Выравнивание по правому краю */
+    margin-right: -45px;
+    margin-top: -20px;
+}
+
+/* Логотип в подвале */
+.footer-logo {
+    display: flex;
+    align-items: center;
+    margin-top: 290px; /* Большой отступ сверху */
+    margin-right: 20px;
+}
+
+/* Изображение логотипа в подвале */
+.footer-logo__img {
+    width: 55px;
+    height: 55px;
+    margin-right: 15px;
+    object-fit: cover;
+    border-radius: 50%; /* Круглая форма */
+}
+
+/* Текст логотипа в подвале */
+.footer-logo__text {
+    font-family: 'Inknut Antiqua', serif;
+    font-size: 18px;
+    font-weight: 500;
+    color: #ffffff;
+}
+
+/* Стили для плавающей кнопки записи */
+.floating-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #FADFD6;
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 2px 40px;
+    border-radius: 30px;
+    font-size: 15px;
+    font-weight: 500;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(235, 235, 235, 0.3);
+    z-index: 999;
+    transition: all 0.3s ease;
+}
+
+.floating-btn:hover {
+    background-color: #fedcd0;
+    transform: translateY(-3px);
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #E0D7D7;
+    padding: 40px;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 550px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    font-family: 'Josefin Sans', sans-serif;
+    position: relative;
+}
+
+.modal-title {
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-size: 25px;
+    font-weight: 500;
+    margin-bottom: 55px;
+    color: #000;
+    text-align: center;
+    line-height: 1.3;
+}
+
+/* Стили для формы записи */
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.booking-form input,
+.booking-form select {
+    padding: 9px 4px;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    font-size: 13px;
+    width: 100%;
+    background-color: #fff;
+    color: #333;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.booking-form input::placeholder {
+    color: #c6c6c6;
+}
+
+select {
+     text-indent: 10px; 
+}
+
+input[type="text"] {
+    padding-left: 15px;
+}
+
+/* Стили для кастомных select */
+.select-wrapper {
+    position: relative;
+}
+
+.select-wrapper::after {
+    content: "›"; 
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: 14px;
+    color: #666;
+    pointer-events: none;
+}
+
+/* Стили для разделителя */
+.divider {
+    height: 1px;
+    background-color: #E0D7D7;
+    margin: 25px 0;
+    width: 100%;
+}
+
+/* Стили для кнопки отправки формы */
+.submit-btn {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    padding: 3px 85px;
+    border-radius: 40px;
+    font-size: 13px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: auto;
+    display: inline-block;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: -40px;
+}
+
+.submit-btn:hover {
+    background-color: #f9f9f9;
+}
+
+/* Стили для кнопки закрытия модального окна */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    font-size: 24px;
+    cursor: pointer;
+    color: #888;
+}
+
+.close:hover {
+    color: #000;
+}
+/* Стили для неактивных select */
+select:disabled {
+    background-color: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+}
+
+/* Стиль для информации о времени работы */
+.time-info {
+    font-size: 12px;
+    color: #888;
+    margin-top: 5px;
+    font-family: 'Josefin Sans', sans-serif;
+    font-weight: 300;
+}
+
+/* Фиксируем размер поля с датой */
+input[type="date"] {
+    width: 100%;
+    padding: 9px 15px;
+    box-sizing: border-box;
+}
+
+
+/* Стили для модального окна мастеров */
+.master-modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Фиксированное позиционирование */
+    top: 0; /* Прижато к верху */
+    left: 0; /* Прижато к левому краю */
+    width: 100%; /* Ширина на весь экран */
+    height: 100%; /* Высота на весь экран */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный чёрный фон */
+    backdrop-filter: blur(5px); /* Размытие фона (поддержка современных браузеров) */
+    -webkit-backdrop-filter: blur(5px); /* Размытие фона (для Safari) */
+    z-index: 1001; /* Высокий z-index, чтобы быть поверх других элементов */
+    justify-content: center; /* Горизонтальное выравнивание по центру */
+    align-items: center; /* Вертикальное выравнивание по центру */
+}
+
+/* Контейнер содержимого модального окна */
+.master-modal-content {
+    background-color: #F7F4F0; /* Цвет фона */
+    padding: 40px; /* Внутренние отступы */
+    border-radius: 30px; /* Закруглённые углы */
+    width: 100%; /* Ширина 100% от родителя */
+    height: 360px; /* Фиксированная высота (можно изменить) */
+    max-width: 535px; /* Максимальная ширина */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень */
+    font-family: 'Josefin Sans', sans-serif; /* Шрифт */
+    position: relative; /* Относительное позиционирование */
+    text-align: left; /* Текст выровнен по левому краю (было center) */
+    overflow-y: auto; /* Добавляем прокрутку, если контент не помещается */
+}
+
+/* Заголовок модального окна */
+.master-modal-content h2 {
+    font-family: 'Inknut Antiqua', sans-serif; /* Шрифт заголовка */
+    font-size: 30px; /* Размер шрифта */
+    font-weight: 500; /* Жирность */
+    margin-bottom: 15px; /* Отступ снизу */
+    color: #000; /* Цвет текста */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+/* Позиция мастера */
+.master-position {
+    font-size: 16px; /* Размер шрифта */
+    font-weight: 600; /* Жирность */
+    margin-bottom: 3px; /* Отступ снизу */
+    color: #000000; /* Цвет текста */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+/* Опыт работы мастера */
+.master-experience {
+    font-size: 16px; /* Размер шрифта */
+    font-weight: 300; /* Жирность */
+    margin-bottom: 25px; /* Отступ снизу */
+    color: #000000; /* Цвет текста */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+/* Навыки мастера */
+.master-skills {
+    font-size: 16px; /* Размер шрифта */
+    font-weight: 300; /* Жирность */
+    line-height: 1.6; /* Межстрочный интервал */
+    color: #000000; /* Цвет текста */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+.highlight{
+    font-size: 16px; /* Размер шрифта */
+    font-weight: 600; /* Жирность */
+    margin-bottom: 25px; /* Отступ снизу */
+    color: #000000; /* Цвет текста */
+    text-align: left; /* Выравнивание по левому краю */
+}
+
+/* Стили для модального окна регистрации */
+.auth-modal-reg {
+    display: none; /* Скрываем модальное окно по умолчанию */
+    position: fixed; /* Фиксируем положение модального окна */
+    top: 0; /* Устанавливаем верхнюю границу окна на 0 */
+    left: 0; /* Устанавливаем левую границу окна на 0 */
+    width: 100%; /* Ширина окна 100% от родительского элемента (экрана) */
+    height: 100%; /* Высота окна 100% от родительского элемента (экрана) */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(5px); /* Размытие заднего фона */
+    -webkit-backdrop-filter: blur(5px); /* Поддержка для Safari */
+    z-index: 1000; /* Задаем высокий z-index для отображения сверху остальных элементов */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+}
+
+.auth-modal-reg__content {
+    background-color: #E0D7D7; /* Цвет фона для содержимого модального окна */
+    padding: 65px; /* Внутренние отступы вокруг содержимого */
+    border-radius: 30px; /* Скругление углов модального окна */
+    width: 100%; /* Ширина содержимого 100% */
+    max-width: 685px; /* Было 620px */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень для придания объема */
+    font-family: 'Josefin Sans', sans-serif; /* Шрифт для текста */
+    position: relative; /* Позиционирование содержимого относительно его обычного положения */
+}
+
+.auth-modal-reg__title {
+    font-family: 'Inknut Antiqua', sans-serif; /* Шрифт заголовка */
+    font-size: 25px; /* Размер шрифта заголовка */
+    font-weight: 600; /* Жирность шрифта */
+    margin-bottom: 40px; /* Отступ снизу заголовка */
+    color: #000; /* Цвет текста заголовка */
+    text-align: center; /* Центрируем текст заголовка */
+    line-height: 1.3; /* Высота строки для лучшей читаемости */
+}
+
+.auth-modal-reg__close {
+    position: absolute; /* Позиционируем кнопку закрытия абсолютно */
+    top: 15px; /* Отступ сверху от верхнего края окна */
+    right: 40px; /* Отступ справа от правого края окна */
+    font-size: 25px; /* Размер шрифта для кнопки закрытия */
+    font-weight: 200; /* Жирность шрифта */
+    cursor: pointer; /* Указываем, что элемент можно кликнуть */
+    color: #888; /* Цвет кнопки закрытия */
+}
+
+.auth-modal-reg__close:hover {
+    color: #000; /* Цвет кнопки закрытия при наведении мыши */
+}
+
+/* Стили формы регистрации */
+.reg-form {
+    display: flex; /* Используем flexbox для компоновки элементов */
+    flex-direction: column; /* Вертикальная компоновка элементов */
+    gap: 30px; /* Промежуток между элементами формы */
+}
+
+.reg-form__input {
+    padding: 12px 15px; /* Внутренние отступы для полей ввода */
+    border: 1px solid #e0e0e0; /* Граница полей ввода */
+    border-radius: 10px; /* Скругление углов полей ввода */
+    font-size: 14px; /* Размер шрифта для полей ввода */
+    height: 38px;
+    width: 100%; /* Ширина полей ввода 100% */
+    background-color: #fff; /* Белый фон для полей ввода */
+    color: #161616; /* Цвет текста в полях ввода */
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+.reg-form__input::placeholder {
+    color: #c6c6c6; /* Цвет плейсхолдера (подсказки) в полях ввода */
+}
+
+.reg-form__btns {
+    display: flex; /* Используем flexbox для компоновки кнопок */
+    gap: 15px; /* Промежуток между кнопками */
+    margin-top: 20px; /* Отступ сверху перед кнопками */
+    justify-content: center; /* Центрируем кнопки */
+}
+
+.reg-form__submit {
+    font-family: 'Josefin Sans', sans-serif;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    padding: 16px 90px; /* Увеличили верхний/нижний padding с 7px до 8px (+1px) */
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 168px;
+    height: 34px; /* Увеличили высоту с 32px до 34px (+2px) */
+    width: 40px; /* Ширина остаётся без изменений */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 6px;
+}
+
+.reg-form__submit:hover {
+    background-color: #ffffff; /* Изменение фона кнопки при наведении мыши */
+}
+
+.reg-form__switch {
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    padding: 8px 50px; /* Увеличили верхний/нижний padding с 7px до 8px (+1px) */
+    border-radius: 40px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-left: 60px;
+    height: 34px; /* Увеличили высоту с 32px до 34px (+2px) */
+    width: 40px; /* Ширина остаётся без изменений */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
+    overflow: hidden;
+    margin-top: 7px;
+}
+
+.reg-form__switch:hover {
+    background-color: rgba(90, 90, 90, 0.107); /* Изменение фона кнопки переключения при наведении мыши */
+}
+
+/* Стили для модального окна входа */
+.auth-modal-login {
+    display: none; /* Скрываем модальное окно по умолчанию */
+    position: fixed; /* Фиксируем положение модального окна */
+    top: 0; /* Устанавливаем верхнюю границу окна на 0 */
+    left: 0; /* Устанавливаем левую границу окна на 0 */
+    width: 100%; /* Ширина окна 100% от родительского элемента (экрана) */
+    height: 100%; /* Высота окна 100% от родительского элемента (экрана) */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    backdrop-filter: blur(5px); /* Размытие заднего фона */
+    -webkit-backdrop-filter: blur(5px); /* Поддержка для Safari */
+    z-index: 1000; /* Задаем высокий z-index для отображения сверху остальных элементов */
+    justify-content: center; /* Центрируем содержимое по горизонтали */
+    align-items: center; /* Центрируем содержимое по вертикали */
+}
+
+.auth-modal-login__content {
+    background-color: #E0D7D7; /* Цвет фона для содержимого модального окна */
+    padding: 65px; /* Внутренние отступы вокруг содержимого */
+    border-radius: 30px; /* Скругление углов модального окна */
+    width: 100%; /* Ширина содержимого 100% */
+    max-width: 685px; /* Было 620px */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Тень для придания объема */
+    font-family: 'Josefin Sans', sans-serif; /* Шрифт для текста */
+    position: relative; /* Позиционирование содержимого относительно его обычного положения */
+}
+
+.auth-modal-login__title {
+    font-family: 'Inknut Antiqua', sans-serif; /* Шрифт заголовка */
+    font-size: 25px; /* Размер шрифта заголовка */
+    font-weight: 600; /* Жирность шрифта */
+    margin-bottom: 40px; /* Отступ снизу заголовка */
+    color: #000; /* Цвет текста заголовка */
+    text-align: center; /* Центрируем текст заголовка */
+    line-height: 1.3; /* Высота строки для лучшей читаемости */
+}
+
+.auth-modal-login__close {
+    position: absolute; /* Позиционируем кнопку закрытия абсолютно */
+    top: 15px; /* Отступ сверху от верхнего края окна */
+    right: 40px; /* Отступ справа от правого края окна */
+    font-size: 25px; /* Размер шрифта для кнопки закрытия */
+    font-weight: 200; /* Жирность шрифта */
+    cursor: pointer; /* Указываем, что элемент можно кликнуть */
+    color: #888; /* Цвет кнопки закрытия */
+}
+
+.auth-modal-login__close:hover {
+    color: #000; /* Цвет кнопки закрытия при наведении мыши */
+}
+
+/* Стили формы входа */
+.login-form {
+    display: flex; /* Используем flexbox для компоновки элементов */
+    flex-direction: column; /* Вертикальная компоновка элементов */
+    gap: 30px; /* Промежуток между элементами формы */
+    align-items: center; /* Центрируем все элементы по горизонтали */
+}
+
+.login-form__input {
+    font-family: 'Josefin Sans', sans-serif;
+    padding: 12px 15px; /* Внутренние отступы для полей ввода */
+    border: 1px solid #e0e0e0; /* Граница полей ввода */
+    border-radius: 10px; /* Скругление углов полей ввода */
+    font-size: 14px; /* Размер шрифта для полей ввода */
+    height: 38px;
+    width: 100%; /* Ширина полей ввода 100% */
+    background-color: #fff; /* Белый фон для полей ввода */
+    color: #161616; /* Цвет текста в полях ввода */
+}
+
+.login-form__input::placeholder {
+    color: #c6c6c6; /* Цвет плейсхолдера (подсказки) в полях ввода */
+}
+
+.login-form__btn {
+    display: flex; /* Используем flexbox для компоновки кнопок */
+    gap: 15px; /* Промежуток между кнопками */
+    margin-top: 20px; /* Отступ сверху перед кнопками */
+    justify-content: center; /* Центрируем кнопки */
+}
+
+.login-form__submit {
+    background-color: #ffffff; /* Белый фон для кнопки отправки */
+    color: rgb(0, 0, 0); /* Цвет текста кнопки отправки */
+    border: 1px solid #000000; /* Граница для кнопки отправки */
+    padding: 0px 30px; /* Внутренние отступы для кнопки отправки */
+    border-radius: 40px; /* Скругление углов кнопки отправки */
+    font-size: 14px; /* Размер шрифта для кнопки отправки */
+    font-weight: 600; /* Жирность шрифта для кнопки отправки */
+    cursor: pointer; /* Указываем, что кнопку можно кликнуть */
+    transition: all 0.3s ease; /* Плавный переход для всех свойств при изменениях */
+    height: 33px;
+    line-height: 33px; /* Добавляем line-height равный высоте кнопки */
+}
+
+.login-form__submit:hover {
+    background-color: #f9f9f9; /* Изменение фона кнопки при наведении мыши */
+}
+
+
+
+/* Стили для поля пароля */
+.password-field-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.password-input-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-input {
+    width: 100%;
+    padding: 12px 40px 12px 15px; /* Добавляем отступ справа для иконки */
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    background-color: #fff;
+    color: #161616;
+    box-sizing: border-box; /* Важно для правильного расчета ширины */
+}
+
+.password-toggle {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;
+    border: none;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.password-toggle svg {
+    width: 100%;
+    height: 100%;
+}
+
+.password-toggle:hover {
+    color: #000;
+}
+
+.password-error {
+    display: none;
+    color: #ff3333;
+    font-size: 12px;
+    font-family: 'Josefin Sans', sans-serif;
+    margin-top: 5px;
+}
+
+/* Остальные стили остаются без изменений */
+.reg-form__input {
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    border-radius: 10px;
+    font-size: 14px;
+    width: 100%;
+    background-color: #fff;
+    color: #161616;
+}
+
+.reg-form__input::placeholder {
+    color: #c6c6c6;
+}
+
+

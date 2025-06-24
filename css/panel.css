@@ -1,0 +1,195 @@
+/* Основные стили страницы */
+body {
+    margin: 0;
+    font-family: 'Inknut Antiqua', sans-serif;
+    font-family: 'Josefin Sans', sans-serif;
+    display: flex;
+    background-color: #ffffff;
+}
+
+/* Стили для серой боковой панели */
+.sidebar {
+    width: 250px; /* Фиксированная ширина боковой панели */
+    background-color: #D9D9D9; /* Темно-синий цвет фона */
+    color: white;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1); /* Тень справа */
+}
+
+
+/* Заголовок в боковой панели */
+.sidebar h2 {
+    font-family: 'Inknut Antiqua', sans-serif;
+    padding: 0 20px 15px;
+    margin: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Граница снизу с прозрачностью */
+    font-size: 18px;
+    color: #000000; /* Светло-серый цвет текста */
+}
+
+/* Стили для списка таблиц */
+#tables-list {
+    list-style-type: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+}
+
+#tables-list li {
+    margin: 0;
+}
+
+/* Стили для ссылок в списке таблиц */
+#tables-list a {
+    display: block;
+    padding: 25px 20px;
+    color: #000000; /* Серый цвет текста */
+    text-decoration: none;
+    transition: all 0.3s ease; /* Плавные переходы */
+    position: relative;
+}
+
+/* Эффект при наведении как на изображении */
+#tables-list a:hover {
+    background-color: #CCCACA; /* 40% прозрачности */
+    color: rgb(0, 0, 0);
+}
+
+/* Стиль для активной таблицы */
+#tables-list a.active {
+    background-color: #CCCACA;
+    color: rgb(0, 0, 0);
+    border-left: 3px solid #000000; /* Синяя полоса слева */
+}
+
+/* Основная область контента */
+.content {
+    flex: 1; /* Занимает все оставшееся пространство */
+    padding: 25px;
+    background-color: rgb(255, 255, 255);
+}
+
+/* Стили для блока с кнопками управления */
+.controls {
+    margin-bottom: 21px;
+    display: flex;
+    gap: 30px; /* Расстояние между кнопками */
+}
+
+/* Общие стили для кнопок */
+.btn {
+    font-family: 'Inknut Antiqua', sans-serif;
+    padding: 11px 45px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 13px;
+    transition: background-color 0.2s; /* Плавное изменение цвета */
+}
+
+/* Стили для кнопки редактирования */
+.btn-edit {
+    background-color: #D9D9D9; /* Синий цвет */
+    color: rgb(0, 0, 0);
+}
+
+.btn-edit:hover {
+    background-color: #CCCACA; /* Темно-синий при наведении */
+}
+
+/* Стили для кнопки удаления */
+.btn-delete {
+    background-color: #D9D9D9; /* Красный цвет */
+    color: rgb(0, 0, 0);
+}
+
+.btn-delete:hover {
+    background-color: #CCCACA; /* Темно-красный при наведении */
+}
+
+/* Стили для кнопки добавления */
+.btn-add {
+    background-color: #D9D9D9; /* Зеленый цвет */
+    color: rgb(0, 0, 0);
+}
+
+.btn-add:hover {
+    background-color: #CCCACA; /* Темно-зеленый при наведении */
+}
+
+/* Стили для таблицы данных */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Убираем двойные границы */
+    margin-top: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* Легкая тень */
+}
+
+/* Стили для ячеек таблицы */
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Граница снизу */
+}
+
+/* Стили для заголовков столбцов */
+th {
+    background-color: #f8f9fa; /* Светло-серый фон */
+    font-weight: 600;
+    color: #2c3e50; /* Темно-синий текст */
+}
+
+/* Эффект при наведении на строку */
+tr:hover {
+    background-color: #f5f5f5; /* Светло-серый фон */
+}
+
+/* Стили для контейнера таблицы (для прокрутки при необходимости) */
+#table-container {
+    margin-top: 20px;
+    overflow-x: auto; /* Горизонтальная прокрутка при необходимости */
+}
+
+/* Сообщение при пустой таблице */
+.empty-message {
+    color: #7f8c8d; /* Серый цвет текста */
+    text-align: center;
+    margin-top: 50px;
+    font-style: italic;
+}
+
+/* Стили для кнопок действий в таблице */
+.action-btn {
+    padding: 5px 10px;
+    margin-right: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+/* Кнопка редактирования в строке таблицы */
+.edit-btn {
+    background-color: #3498db;
+    color: white;
+}
+
+/* Кнопка удаления в строке таблицы */
+.delete-btn {
+    background-color: #e74c3c;
+    color: white;
+}
+.user-info-text {
+    color: #000000;
+    padding: 25px 20px;
+}
+.back-to-cabinet {
+    color: #000000;
+    text-decoration: 0;
+    padding: 25px 20px;
+}
+.logout-admin {
+    color: #000000;
+    text-decoration: 0;
+
+}
