@@ -33,3 +33,24 @@ $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "beauty_salon";
+
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+### 5. Запуск сайта
+Откройте сайт в браузере по адресу:
+http://localhost/lab5
+
+⚠Возможные проблемы
+Если сайт не запускается, убедитесь, что локальный сервер (Apache и MySQL) запущены.
+
+Проверьте правильность настроек подключения к базе данных в файле db.php.
+
+Убедитесь, что база данных beauty_salon создана и импортирована корректно.
+
+Контакты
+По вопросам проекта пишите: kzkarin1611@gmail.com
+GitHub: https://github.com/kuzmina1611
+
+yaml
+Копировать
+Редактировать
