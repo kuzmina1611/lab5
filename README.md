@@ -32,9 +32,13 @@ http://localhost/lab5
 
 ### 4. Подключение к базе данных
 Файл подключения (db.php):
+
 $servername = "localhost";
+
 $username = "root";
+
 $password = "";
+
 $dbname = "beauty_salon";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -54,5 +58,6 @@ http://localhost/lab5
 📬Контакты
 
 По вопросам проекта пишите: kzkarin1611@gmail.com
+
 GitHub: https://github.com/kuzmina1611
 
