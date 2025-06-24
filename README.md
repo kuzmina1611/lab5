@@ -48,9 +48,7 @@ http://localhost/lab5
 Убедитесь, что база данных beauty_salon создана и импортирована корректно.
 
 Контакты
+
 По вопросам проекта пишите: kzkarin1611@gmail.com
 GitHub: https://github.com/kuzmina1611
 
-yaml
-Копировать
-Редактировать
